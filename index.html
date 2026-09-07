@@ -158,7 +158,7 @@
       position: relative;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
-      /* Padronizacao Frame Card (Estilo Prefeitura) */
+          /* Encaixe Profissional 9:16 - Estilo Prefeitura */
     .tv-container {
       display: flex !important;
       width: 100vw !important;
@@ -166,49 +166,25 @@
       padding: 1.5rem !important;
       gap: 1.5rem !important;
       box-sizing: border-box !important;
-      overflow: hidden !important;
     }
     .video-section {
-      flex: 0 0 40% !important;
+      flex: 0 0 auto !important;
+      width: auto !important;
       height: 100% !important;
+      aspect-ratio: 9 / 16 !important;
       background: #000 !important;
-      background-color: #000 !important;
       border-radius: 24px !important;
       overflow: hidden !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
       position: relative !important;
     }
-    video {
+    video, #image-player {
       width: 100% !important;
       height: 100% !important;
-      object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
-      border-radius: 20px !important;
-      display: block !important;
-    }
-    #image-player {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
-      border-radius: 20px !important;
-      display: block !important;
-    }
-    .info-section {
-      flex: 1 !important;
-      height: 100% !important;
+      object-fit: cover !important;
       border-radius: 24px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35) !important;
+      display: block !important;
     }
   </style>
 </head>
