@@ -3,195 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mural Digital - Somzão</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Mural - Grupo Somzão</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body, html {
       width: 100%;
       height: 100%;
-      background-color: #0b0c10;
-      font-family: 'Montserrat', sans-serif;
       overflow: hidden;
-      color: #fff;
+      background-color: #0b0f19;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-
-    .container {
+    .tv-container {
       display: flex;
       width: 100vw;
       height: 100vh;
-      padding: 3vh 3vw;
-      gap: 3vw;
+      background-color: #0b0f19;
     }
-
-    .media-column {
-      flex: 0 0 35%;
-      height: 100%;
+    .video-section {
+      flex: 0 0 42%;
+      height: 100vh;
+      background: #000 !important;
+      background-color: #000 !important;
       position: relative;
-      border-radius: 20px;
       overflow: hidden;
-      background-color: #050505;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    video, 
-
-    .info-column {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(145deg, #12141a, #1a1e26);
-      border-radius: 20px;
-      padding: 3.5vh 2.5vw;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid #232733;
-      position: relative;
-    }
-
-    .header-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid #e11d48;
-      padding-bottom: 2vh;
-      margin-bottom: 2vh;
-      flex-shrink: 0;
-    }
-
-        .brand-logo {
-      height: 12vh;
-      max-width: 22vw;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
-    }
-
-    .brand-title {
-      font-size: 2.7vw !important;
-      font-weight: 900;
-      color: #ffffff;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .brand-title span {
-      color: #e11d48;
-    }
-
-    .badge {
-      background: #e11d48;
-      color: #fff;
-      font-size: 0.85vw;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: inline-block;
-      margin-bottom: 6px;
-      transition: background 0.3s ease;
-    }
-
-    
-
-    .caption-text {
-      width: 100%;
-      color: #e5e5e5;
-      font-weight: 500;
-      line-height: 1.45;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .footer-handles {
-      display: flex;
-      gap: 1.5vw;
-      margin-top: 1.5vh;
-      font-size: 0.9vw;
-      font-weight: 700;
-      color: #8f9cae;
-      flex-shrink: 0;
-    }
-      
-    video, #image-player {
-      background: #000 !important;
-      background-color: #000 !important;
-    }
-      .header-text h1, .header h1 {
-      text-transform: uppercase !important;
-}
-      /* Motor TV Standard 2026 */
-    .header-text h1, .header h1 {
-      text-transform: uppercase !important;
-    }
-    .header-text h1 span, .header h1 span {
-      text-transform: uppercase !important;
-    }
-    .info-section {
-      height: 100vh !important;
-      max-height: 100vh !important;
-      display: flex !important;
-      flex-direction: column !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-    }
-    .caption-container {
-      flex: 1 1 auto !important;
-      height: 0 !important;
-      margin-top: 2rem !important;
-      overflow-y: scroll !important;
-      scrollbar-width: none !important;
-      -ms-overflow-style: none !important;
-      position: relative !important;
-    }
-    .caption-container::-webkit-scrollbar {
-      display: none !important;
-    }
-    .caption-box {
-      font-size: 2.7vw !important;
-      line-height: 1.4 !important;
-      font-weight: 600 !important;
-      color: #222 !important;
-      word-wrap: break-word !important;
-      white-space: pre-line !important;
-      padding-bottom: 6rem !important;
-    }
-    video, #image-player {
-      background: #000 !important;
-      background-color: #000 !important;
-    }
-      #image-player {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
-    }
-      video {
-      object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
-    }
-      /* Padronizacao Universal de Midia e Layout */
-    .header-text h1, .header h1 {
-      text-transform: uppercase !important;
-    }
-    .video-section {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      background: #000 !important;
-      background-color: #000 !important;
     }
     video {
       width: 100% !important;
@@ -209,10 +50,60 @@
       background-color: #000 !important;
       display: block !important;
     }
+    .info-section {
+      flex: 1;
+      height: 100vh !important;
+      max-height: 100vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 3rem;
+      background: #111827;
+      color: #fff;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ef4444;
+      padding-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+    .header-text .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      font-size: 1rem;
+      font-weight: 800;
+      border-radius: 50px;
+      text-transform: uppercase !important;
+      letter-spacing: 1px;
+      background: #ef4444;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .header-text h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      text-transform: uppercase !important;
+    }
+    .header-text h1 span {
+      color: #ef4444;
+      text-transform: uppercase !important;
+    }
+    .logo-img {
+      max-height: 80px;
+      max-width: 160px;
+      object-fit: contain;
+    }
     .caption-container {
       flex: 1 1 auto !important;
       height: 0 !important;
       margin-top: 2rem !important;
+      margin-bottom: 3.5rem !important;
       overflow-y: scroll !important;
       scrollbar-width: none !important;
       -ms-overflow-style: none !important;
@@ -230,39 +121,60 @@
       white-space: pre-line !important;
       padding-bottom: 6rem !important;
     }
+    .footer-social {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 3rem;
+      right: 3rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #9ca3af;
+      border-top: 1px solid #1f2937;
+      padding-top: 1rem;
+    }
+    .footer-social span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="media-column">
-      <img id="image-player" style="display:none; width:100%; height:100%; object-fit:contain; background-color:#050505;" />
-      <video id="player" autoplay playsinline muted loop preload="auto" style="width:100%; height:100%; object-fit:contain; background-color:#050505;">
+  <div class="tv-container">
+    <div class="video-section">
+      <img id="image-player" style="display:none;" />
+      <video id="player" autoplay playsinline muted loop preload="auto">
         <source id="video-source" src="" type="video/mp4">
       </video>
     </div>
 
-    <div class="info-column">
-      <div class="header-box" id="header-box">
-        <div>
-          <span class="badge" id="post-badge">SOMZÃO</span>
-          <h1 class="brand-title">GRUPO <span>SOMZÃO</span></h1>
+    <div class="info-section">
+      <div class="header">
+        <div class="header-text">
+          <span class="badge">Somzão</span>
+          <h1>Grupo <span>Somzão</span></h1>
         </div>
-        <img src="logo.png" alt="Logo Somzão" class="brand-logo" onerror="this.src='logo.pmg'" />
+        <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
       </div>
 
       <div class="caption-container" id="caption-container">
-        <div class="caption-text" id="caption-text">Carregando novidades...</div>
+        <div class="caption-box" id="caption-text">
+          Carregando informações...
+        </div>
       </div>
 
-      <div class="footer-handles">
+      <div class="footer-social">
         <span>📍 @loja_somzao</span>
         <span>✨ @estetica_somzao</span>
       </div>
     </div>
   </div>
 
-        <script>
+  <script>
     function iniciarAutoScroll(container) {
       if (!container) return;
       if (window.__scrollInterval) clearInterval(window.__scrollInterval);
@@ -306,7 +218,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var containerElem = document.getElementById('caption-container');
-      var captionElem = document.getElementById('caption-text') || containerElem;
+      var captionElem = document.getElementById('caption-text');
       var player = document.getElementById('player');
       var videoSource = document.getElementById('video-source');
       var imagePlayer = document.getElementById('image-player');
@@ -375,7 +287,7 @@
               player.src = mediaUrl;
               player.load();
               player.play().catch(function(e) {
-                console.log('Autoplay:', e);
+                console.log('Autoplay tentado:', e);
               });
             }
           }
