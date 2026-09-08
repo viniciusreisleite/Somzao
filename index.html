@@ -213,6 +213,41 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
       overflow: hidden !important;
     }
+      /* === Correção Imagem Elástica Sem Cortes === */
+    /* Garante que o container se adapte */
+    .tv-container {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      background-color: #0b0f19 !important;
+    }
+
+    /* O card de mídia quando for imagem: elastico e centralizado */
+    .tv-container.is-image .video-section {
+      flex: 0 1 auto !important; /* Não forcar largura, ser elastico */
+      width: auto !important;
+      height: 100% !important;
+      max-width: 48vw !important; /* Limite de segurança para não invadir o texto */
+      background: #000 !important;
+      border-radius: 24px !important;
+      overflow: hidden !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+      position: relative !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    /* A imagem dentro do card: preenche o frame elastico sem distorcer nem deixar vazio */
+    .tv-container.is-image #image-player {
+      width: auto !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important; /* Garantir que 100% apareça */
+      border-radius: 20px !important;
+      display: block !important;
+      margin: 0 auto !important;
+    }
   </style>
 </head>
 <body>
