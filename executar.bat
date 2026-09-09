@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 echo ======================================================
-echo Atualizando mural: Somzao (Loja + Estetica)
+echo Atualizando mural: Somzao
 echo ======================================================
 
 echo 1. Baixando fotos e videos do Instagram...
