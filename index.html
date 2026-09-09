@@ -18,24 +18,79 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     
-    
-    video {
+    /* Container Principal - Ocupa 100% da tela da TV (32" a 55") */
+    .tv-container {
+      display: flex !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 1.5rem !important;
+      gap: 1.5rem !important;
+      box-sizing: border-box !important;
+      background-color: #0b0f19 !important;
+    }
+
+    /* Base da Seção de Mídia */
+    .video-section {
+      height: 100% !important;
+      border-radius: 24px !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      position: relative !important;
+    }
+
+    /* CASO 1: VÍDEO (Trava na proporção vertical 9:16) */
+    .tv-container.is-video .video-section {
+      flex: 0 0 auto !important;
+      aspect-ratio: 9 / 16 !important;
+      background: #000 !important;
+    }
+    .tv-container.is-video video {
       width: 100% !important;
       height: 100% !important;
       object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
+      border-radius: 20px !important;
       display: block !important;
     }
-    #image-player {
-      width: 100% !important;
+
+    /* CASO 2: IMAGEM (Auto-ajuste elástico: abraça a foto sem sobra preta) */
+    .tv-container.is-image .video-section {
+      flex: 0 0 auto !important;
+      width: fit-content !important;
+      max-width: 52vw !important; /* Limite de segurança para não engolir o texto */
+      background: #000 !important;
+    }
+    .tv-container.is-image #image-player {
+      width: auto !important;
       height: 100% !important;
+      max-width: 100% !important;
       object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
+      border-radius: 20px !important;
       display: block !important;
     }
-    
+
+    /* Card de Informações e Legenda (Consome todo o espaço que sobrar) */
+    .info-section {
+      flex: 1 1 0% !important;
+      min-width: 0 !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      border-radius: 24px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 2.5rem 3rem !important;
+      background: #111827 !important;
+      color: #fff !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+
     .header {
       display: flex;
       justify-content: space-between;
@@ -72,6 +127,7 @@
       max-width: 160px;
       object-fit: contain;
     }
+
     .caption-container {
       flex: 1 1 auto !important;
       height: 0 !important;
@@ -86,7 +142,7 @@
       display: none !important;
     }
     .caption-box {
-      font-size: 2.7vw !important;
+      font-size: 2.5vw !important;
       line-height: 1.45 !important;
       font-weight: 600 !important;
       color: #ffffff !important;
@@ -94,6 +150,7 @@
       white-space: pre-line !important;
       padding-bottom: 6rem !important;
     }
+
     .footer-social {
       position: absolute;
       bottom: 1.5rem;
@@ -112,141 +169,6 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-      .tv-container {
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-      background-color: #0b0f19;
-      padding: 1.5rem;
-      gap: 1.5rem;
-      box-sizing: border-box;
-    }
-    .video-section {
-      flex: 0 0 38% !important;
-      height: 100% !important;
-      background: #000 !important;
-      background-color: #000 !important;
-      border-radius: 24px !important;
-      overflow: hidden !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    }
-    video, #image-player {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      background: #000 !important;
-      background-color: #000 !important;
-      border-radius: 20px !important;
-      display: block !important;
-    }
-    .info-section {
-      flex: 1;
-      height: 100% !important;
-      border-radius: 24px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      padding: 2.5rem 3rem !important;
-      background: #111827;
-      color: #fff;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-      position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-              /* === Layout Adaptativo Dinamico === */
-    .tv-container {
-      display: flex !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      padding: 1.5rem !important;
-      gap: 1.5rem !important;
-      box-sizing: border-box !important;
-    }
-    .video-section {
-      height: 100% !important;
-      background: #000 !important;
-      border-radius: 24px !important;
-      overflow: hidden !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      position: relative !important;
-    }
-    /* QUANDO FOR VIDEO */
-    .tv-container.is-video .video-section {
-      flex: 0 0 auto !important;
-      aspect-ratio: 9 / 16 !important;
-    }
-    .tv-container.is-video video {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      border-radius: 24px !important;
-      display: block !important;
-    }
-    /* QUANDO FOR IMAGEM */
-    .tv-container.is-image .video-section {
-      flex: 0 0 auto !important;
-      max-width: 45vw !important;
-      background: #050505 !important;
-    }
-    .tv-container.is-image #image-player {
-      width: auto !important;
-      max-width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      border-radius: 20px !important;
-      display: block !important;
-    }
-    .info-section {
-      flex: 1 !important;
-      height: 100% !important;
-      max-height: 100% !important;
-      border-radius: 24px !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-      overflow: hidden !important;
-    }
-      /* === Correção Imagem Elástica Sem Cortes === */
-    /* Garante que o container se adapte */
-    .tv-container {
-      display: flex !important;
-      justify-content: flex-start !important;
-      align-items: center !important;
-      background-color: #0b0f19 !important;
-    }
-
-    /* O card de mídia quando for imagem: elastico e centralizado */
-    .tv-container.is-image .video-section {
-      flex: 0 1 auto !important; /* Não forcar largura, ser elastico */
-      width: auto !important;
-      height: 100% !important;
-      max-width: 48vw !important; /* Limite de segurança para não invadir o texto */
-      background: #000 !important;
-      border-radius: 24px !important;
-      overflow: hidden !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
-      position: relative !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-    }
-
-    /* A imagem dentro do card: preenche o frame elastico sem distorcer nem deixar vazio */
-    .tv-container.is-image #image-player {
-      width: auto !important;
-      max-width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important; /* Garantir que 100% apareça */
-      border-radius: 20px !important;
-      display: block !important;
-      margin: 0 auto !important;
     }
   </style>
 </head>
@@ -282,7 +204,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     function iniciarAutoScroll(container) {
       if (!container) return;
       if (window.__scrollInterval) clearInterval(window.__scrollInterval);
@@ -378,7 +300,14 @@
               player.style.display = 'none';
             }
             if (imagePlayer) {
-              imagePlayer.style.display = 'block';
+              imagePlayer.onload = function() {
+                imagePlayer.style.display = 'block';
+              };
+              imagePlayer.onerror = function() {
+                setTimeout(function() {
+                  imagePlayer.src = midiaArquivo + '?retry=' + Date.now();
+                }, 3000);
+              };
               imagePlayer.src = midiaArquivo + '?v=' + ts;
             }
           } else {
