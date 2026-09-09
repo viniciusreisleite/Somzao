@@ -199,7 +199,7 @@
   <div class="tv-container is-video" id="main-container">
     <div class="video-section">
       <img id="image-player" style="display:none;" />
-      <video id="player" autoplay playsinline muted loop preload="auto">
+      <video id="player" autoplay playsinline muted defaultMuted loop preload="auto" style="width:100%; height:100%; object-fit:contain; background:#000;">
         <source id="video-source" src="" type="video/mp4">
       </video>
     </div>
@@ -362,12 +362,29 @@
               };
 
               var mediaUrl = midiaArquivo + '?v=' + ts;
-              videoSource.src = mediaUrl;
+              player.muted = true;
+              player.defaultMuted = true;
+              player.setAttribute('muted', '');
+              player.removeAttribute('controls');
               player.src = mediaUrl;
+              if (videoSource) videoSource.src = mediaUrl;
               player.load();
-              player.play().catch(function(e) {
-                console.log('Autoplay:', e);
-              });
+              
+              var tentarPlay = function() {
+                player.muted = true;
+                var promessa = player.play();
+                if (promessa !== undefined) {
+                  promessa.catch(function() {
+                    player.muted = true;
+                    player.play();
+                  });
+                }
+              };
+
+              player.oncanplay = function() {
+                tentarPlay();
+              };
+              tentarPlay();
             }
           }
         })
@@ -379,6 +396,7 @@
   </script>
 </body>
 </html>
+
 
 
 
