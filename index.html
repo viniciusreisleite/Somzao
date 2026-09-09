@@ -32,21 +32,33 @@
     /* Base da Seção de Mídia */
     .video-section {
       height: 100% !important;
-      border-radius: 24px !important;
+      aspect-ratio: 9 / 16 !important;
+      flex: 0 0 auto !important;
+      background: #000 !important;
+      border-radius: 26px !important;
       overflow: hidden !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
       position: relative !important;
+      border: 3px solid rgba(255, 255, 255, 0.1) !important;
     }
 
     /* CASO 1: VÍDEO (Trava na proporção vertical 9:16) */
     .tv-container.is-video .video-section {
+      height: 100% !important;
+      aspect-ratio: 9 / 16 !important;
       flex: 0 0 auto !important;
-      aspect-ratio: auto !important; width: auto !important;
       background: #000 !important;
+      border-radius: 26px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: relative !important;
+      border: 3px solid rgba(255, 255, 255, 0.1) !important;
     }
     .tv-container.is-video video {
       width: auto !important;
@@ -60,10 +72,18 @@
 
     /* CASO 2: IMAGEM (Auto-ajuste elástico: abraça a foto sem sobra preta) */
     .tv-container.is-image .video-section {
+      height: 100% !important;
+      aspect-ratio: 9 / 16 !important;
       flex: 0 0 auto !important;
-      width: fit-content !important;
-      max-width: 52vw !important; /* Limite de segurança para não engolir o texto */
       background: #000 !important;
+      border-radius: 26px !important;
+      overflow: hidden !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: relative !important;
+      border: 3px solid rgba(255, 255, 255, 0.1) !important;
     }
     .tv-container.is-image #image-player {
       width: auto !important;
@@ -127,7 +147,7 @@
     .logo-img {
       max-height: 80px;
       max-width: 160px;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     .caption-container {
@@ -359,4 +379,5 @@
   </script>
 </body>
 </html>
+
 
